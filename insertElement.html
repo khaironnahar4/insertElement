@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Element in Array</title>
+    <script>
+        let array = [1, 5, 23, 43, 54];
+        console.log(`Our array is ${array}`);
+
+        //adding value in array
+        function addElement() {
+            let position = document.getElementById('position').value;
+            position--;
+            let value = document.getElementById('element').value;
+            for (let i = array.length - 1; i >= position; i--) {
+                array[i + 1] = array[i];
+            }
+            array[position] = value;
+            //array.splice(3,0,27);
+            console.log(`After adding an element ${array}`);
+        }
+    </script>
+</head>
+
+<body>
+    <div style="margin: auto; width: 300px;">
+        <h3>Please enter an element and position</h3>
+        <input type="text" id="element" placeholder="Element" style="margin-bottom: 20px;">
+        <input type="text" id="position" placeholder="Position" style="margin-bottom: 20px;">
+        <button onclick="addElement()" style="display: block;">Add Element</button>
+    </div>
+</body>
+
+</html>
